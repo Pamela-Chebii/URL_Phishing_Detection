@@ -57,6 +57,7 @@ async def check_url():
             
             features_df = pd.DataFrame([features])
             app.logger.info(f"Features DataFrame: {features_df}")
+            features_df.fillna(0, inplace=True)
             
             if model is None:
                 flash("Model is not loaded. Please check the server configuration.", "error")
